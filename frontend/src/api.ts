@@ -8,7 +8,7 @@ export const getLogins = async () => {
   return response.data;
 }
 
-export const getUsers = async () => {
+export const getUsers = async (): Promise<User[]> => {
   const response = await axios.get(`${API_BASE}/users`);
   return response.data;
 }

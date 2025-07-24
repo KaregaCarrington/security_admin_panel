@@ -11,3 +11,9 @@ export type Login = {
   location: string;
   timestamp: string;
 };
+
+export type UserFormType = {
+  name: string;
+  email: string;
+  location: string;
+};

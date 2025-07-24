@@ -1,6 +1,7 @@
 import { use, useEffect, useState } from "react";
 import { getUsers, deleteUser } from "../api";
 import { User } from "../types";
+import { Link } from "react-router-dom";
 
 export default function Users() {
   const [users, setUsers] = useState<User[]>([]);
@@ -39,10 +40,10 @@ export default function Users() {
               <td className="border px-4 py-2">{user.email}</td>
               <td className="border px-4 py-2">{user.location}</td>
               <td className="border px-4 py-2">
-                <button
-                  onClick={() => handleDelete(user.id)}
-                  className="bg-red-500 text-white px-2 py-1 rounded"
-                >
+                <Link to={`/users/${user.id}/edit`} className="bg-blue-500 text-white px-2 py-1 rounded">
+                  Edit
+                </Link>
+                <button onClick={() => handleDelete(user.id)} className="bg-red-500 text-white px-2 py-1 rounded">
                   Delete
                 </button>
               </td>
