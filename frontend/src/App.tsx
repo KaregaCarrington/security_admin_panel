@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./components/Dashboard";
-import Users from "./components/Users";
+import Users from "./pages/Users";
 
 function App() {
   return (

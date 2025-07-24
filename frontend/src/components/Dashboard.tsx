@@ -1,21 +1,16 @@
 import { useEffect, useState } from "react";
 import { getLogins } from "../api";
-
-type Login = {
-  user_name: string;
-  ip_address: string;
-  location: string;
-  timestamp: string;
-};
+import { Login } from "../types";
 
 export default function Dashboard() {
   const [logins, setLogins] = useState<Login[]>([]);
 
+  const fetchLogins = async () => {
+    const data = await getLogins();
+    setLogins(data);
+  };
+
   useEffect(() => {
-    const fetchLogins = async () => {
-      const data = await getLogins();
-      setLogins(data);
-    };
     fetchLogins();
   }, []);
 
